@@ -67,9 +67,9 @@ async def run_bot(websocket_client, stream_sid):
             stt,                 # Speech-To-Text
             tma_in,              # User responses
             llm,                 # LLM
+            tma_out,             # LLM responses
             tts,                 # Text-To-Speech
-            transport.output(),  # Websocket output to client
-            tma_out              # LLM responses
+            transport.output()  # Websocket output to client
         ])
 
         task = PipelineTask(pipeline, params=PipelineParams(allow_interruptions=True))
